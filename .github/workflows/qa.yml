@@ -3,7 +3,7 @@ name: QA
 on:
   push:
     branches: 
-      - 'deploy/QA**'
+      - 'deploy/QA-**'
       
 jobs:
   deploy:
