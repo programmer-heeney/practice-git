@@ -28,3 +28,6 @@ jobs:
         
       - name: pwd
         run: pwd
+        
+      - name: cat ./action.txt
+        run: cat ~/action.txt
