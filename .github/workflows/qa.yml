@@ -2,9 +2,9 @@ name: QA
 
 on:
   push:
+    # Sequence of patterns matched against refs/heads
     branches:
-      - main
-      - deploy/QA-02
+      - 'release/**'
       
 jobs:
   deploy:
