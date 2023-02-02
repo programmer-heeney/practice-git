@@ -25,3 +25,6 @@ jobs:
         
       - name: Print yarn version
         run: yarn -v
+        
+      - name: pwd
+        run: pwd
