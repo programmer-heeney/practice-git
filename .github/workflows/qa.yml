@@ -3,6 +3,7 @@ name: QA
 on:
   push:
     branches:
+      - main
       - deploy/QA-02
       
 jobs:
