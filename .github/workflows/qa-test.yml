@@ -1,0 +1,30 @@
+name: QA
+
+on:
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches:
+      - 'deploy/QA**'
+      - 'develop'
+      
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3.3.0
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version: 16.x
+          
+      - name: Install Dependencies
+        run: yarn install
+        
+      - name: Print yarn version
+        run: yarn -v
+        
+      - name: cat ./action.txt
+        run: cat ./action.txt
