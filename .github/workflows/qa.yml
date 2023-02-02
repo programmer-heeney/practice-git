@@ -4,7 +4,8 @@ on:
   push:
     # Sequence of patterns matched against refs/heads
     branches:
-      - 'release/**'
+      - 'deploy/QA**'
+      - 'develop'
       
 jobs:
   deploy:
