@@ -26,5 +26,13 @@ jobs:
       - name: Print yarn version
         run: yarn -v
         
-      - name: cat ./action.txt
-        run: cat ./action.txt
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_PRIVATE_KEY" > ./gitub_action_key
+          sudo chmod 600 ./gitub_action_key
+          echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+        shell: bash
+        env:
+          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+          SSH_KNOWN_HOSTS: ${{secrets.SSH_KNOWN_HOSTS}}
